@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Jasmine Spec Runner</title>
+
+	<link rel="stylesheet" type="text/css" href="lib/jasmine/jasmine.css">
+	<script type="text/javascript" src="lib/jasmine/jasmine.js"></script>
+	<script type="text/javascript" src="lib/jasmine/jasmine-html.js"></script>
+	<script type="text/javascript" src="lib/jasmine/jasmine-console.js"></script>
+	<script type="text/javascript" src="../src/js/lib/require.js"></script>
+	<script type="text/javascript" src="../src/js/lib/jquery.js"></script>
+	<script type="text/javascript" src="../src/js/require.config.js"></script>
+	<script type="text/javascript">
+		window.requireconfig.baseUrl = '../src/js';
+		require.config(window.requireconfig);
+	</script>
+	<script type="text/javascript">
+		require(['../test/specs/movie.spec.js'], function () {
+			jasmine.getEnv().addReporter(new jasmine.HtmlReporter());
+		    jasmine.getEnv().addReporter(new jasmine.ConsoleReporter());
+			jasmine.getEnv().execute();	  
+		});
+	</script>
+</head>
+
+<body>
+</body>
+</html>
